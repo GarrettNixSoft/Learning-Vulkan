@@ -33,4 +33,9 @@
       <Filter>Source Files\shaders</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\nixon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
