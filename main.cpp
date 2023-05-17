@@ -1102,6 +1102,15 @@ private:
     }
 
     void recreateSwapChain() {
+        // check for minimize, and if detected, wait until it's not
+        int width = 0, height = 0;
+        glfwGetFramebufferSize(window, &width, &height);
+        if (debugMode && (width == 0 || height == 0)) std::cout << "Window minimized" << std::endl;
+        while (width == 0 || height == 0) {
+            glfwGetFramebufferSize(window, &width, &height);
+            glfwWaitEvents();
+            if (debugMode && width != 0 && height != 0) std::cout << "Window restored" << std::endl;
+        }
         // wait for the GPU to be done with whatever it's doing (typically rendering a frame)
         vkDeviceWaitIdle(device);
         // destroy the current swap chain
