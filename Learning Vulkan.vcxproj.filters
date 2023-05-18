@@ -37,5 +37,8 @@
     <Image Include="textures\nixon.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="textures\viking_room.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
